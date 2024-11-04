@@ -1,18 +1,16 @@
 #include <Arduino.h>
 
-// put function declarations here:
-int myFunction(int, int);
+/* Number of PIN where the HIGH should be detected that comes from SIG_PIN */
+const int SWITCH_DETECT_PIN = GPIO_NUM_4;
 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+  Serial.begin(9600);
+
+  // Set detect pin as input
+  pinMode(SWITCH_DETECT_PIN, INPUT);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+  Serial.println(digitalRead(SWITCH_DETECT_PIN));
+  delay(1000);
 }

@@ -35,7 +35,7 @@ void run() {
   // Go to pause position
   for(pos = startPos; pos > pausePos; --pos) {
 		servo.write(translateDegrees(pos));    
-		delay(8);
+		delay(6);
   }
 
   // Do pause position
@@ -46,17 +46,17 @@ void run() {
   // Go to end position
   for (pos = pausePos; pos > endPos; --pos) { 
 		servo.write(translateDegrees(pos));    
-		delay(8);
+		delay(7);
 	}
 
   Serial.printf("Ended at position: %d \n", pos);
   Serial.println(translateDegrees(pos));
-  delay(8);
+  delay(10);
 
   // Go to start position
 	for (pos = endPos; pos < startPos; ++pos) {
 		servo.write(translateDegrees(pos));
-		delay(8);
+		delay(6);
 	}
 
   Serial.printf("Returned to position: %d \n", pos);
